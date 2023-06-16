@@ -1,14 +1,14 @@
 {
     "name": "withinviewport",
     "description": "Determine whether an element is completely within the browser viewport",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "type": "module",
     "repository": {
 		"type": "git",
         "url": "https://github.com/patik/within-viewport.git"
     },
     "devDependencies": {
-		"@testing-library/dom": "^9.3.0",
+        "@testing-library/dom": "^9.3.1",
         "@testing-library/jest-dom": "^5.16.5",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-cypress": "^2.13.3",
@@ -30,8 +30,8 @@
     ],
     "scripts": {
         "build": "yarn build-default && yarn build-esm",
-        "build-default": "rm -rf dist/* && yarn tsc --project ./tsconfig.export.json && cp ../README.md ./README.md && cp ../LICENSE ./LICENSE",
-        "build-esm": "rm -rf dist-esm/* && yarn tsc --project ./tsconfig.esm.export.json && cp ../README.md ./README.md && cp ../LICENSE ./LICENSE",
+        "build-default": "shx rm -rf dist/* && yarn tsc --project ./tsconfig.export.json && shx cp ../README.md ./README.md && shx cp ../LICENSE ./LICENSE",
+        "build-esm": "shx rm -rf dist-esm/* && yarn tsc --project ./tsconfig.esm.export.json && shx cp ../README.md ./README.md && shx cp ../LICENSE ./LICENSE",
         "clean": "git clean -fdx",
         "cover": "yarn test --collectCoverage",
         "typecheck": "tsc --noEmit",
